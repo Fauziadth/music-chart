@@ -1,7 +1,6 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Col, Row } from 'antd';
 import musicAPI, { TrackListProps, TrackProps } from '../../../services/musicAPI';
-import { numberWithCommas } from '../../../utils/utlis';
 import TrackCard from './TrackCard';
 
 const TrackListView = () => {

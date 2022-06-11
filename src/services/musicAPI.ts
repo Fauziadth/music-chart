@@ -3,8 +3,8 @@ import { LASTFM_BASE } from "../constant";
 import { convertQuery } from "../utils/utlis";
 
 interface ImageProps {
-  "#text": string,
-  "size": string
+    "#text": string,
+    "size": string
 }
 
 interface ListProps {
@@ -24,7 +24,7 @@ export interface ArtistProps {
     image: Array<ImageProps>
 }
 
-export interface ArtistListProps{
+export interface ArtistListProps {
     artist: Array<ArtistProps>,
     "@attr": ListProps
 }
@@ -48,20 +48,40 @@ export interface TrackProps {
     image: Array<ImageProps>
 }
 
-export interface TrackListProps{
+export interface TrackListProps {
     track: Array<TrackProps>,
     "@attr": ListProps
 }
 
+export interface SearchedTrackProps {
+    name: string,
+    artist: string,
+    url: string,
+    streamable: string,
+    listeners: string,
+    image: Array<ImageProps>
+    mbid: string
+}
+
 const musicAPI = {
-    
-    getTopArtisList: (query : Object) => {
+
+    getTopArtisList: (query: Object) => {
         const api = "chart.gettopartists"
 
         return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
     },
-    getTopTrackList: (query : Object) => {
+    getTopTrackList: (query: Object) => {
         const api = "chart.gettoptracks"
+
+        return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
+    },
+    getSearchArtist: (query: Object) => {
+        const api = "artist.search"
+
+        return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
+    },
+    getSearchTrack: (query: Object) => {
+        const api = "track.search"
 
         return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
     },
