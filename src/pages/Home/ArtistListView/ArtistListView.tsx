@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
 import musicAPI, { ArtistListProps, ArtistProps } from '../../../services/musicAPI';
 import ArtistCard from './ArtistCard';
+import Loading from '../../../component/Loading/Loading';
 
 const ArtistListView = () => {
     const [isLoading, setLoading] = useState<boolean>(false);
@@ -21,12 +22,15 @@ const ArtistListView = () => {
             .then(response => {
                 const data: ArtistListProps = response.data.artists;
                 setArtistList(data.artist);
+                setLoading(false);
             })
     }
 
     useEffect(() => {
         loadArtist();
     }, []);
+
+    if (isLoading) return (<Loading/>)
 
     return (
         <Row gutter={[16, 16]}>

@@ -7,18 +7,16 @@ import SearchTrackListView from './SearchTrackList/SearchTrackListView';
 const SearchPage = () => {
     const [keyword, setKeyword] = useState<string>("")
     const [searchedKey, setSearchedKey] = useState<string>("")
-    const [initView, setInitView] = useState<boolean>(true)
 
     const search = () => {
         setSearchedKey(keyword);
-        setInitView(false)
     }
 
     return (
         <Fragment>
             <Input
                 value={keyword}
-                className={initView ? 'big-input' : 'small-input'}
+                className={searchedKey ? 'small-input' : 'big-input' }
                 placeholder={"Search artist or track"}
                 style={{ width: '50%', marginTop: '30px' }}
                 size="large"

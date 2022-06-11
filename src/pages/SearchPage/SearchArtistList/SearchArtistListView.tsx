@@ -3,14 +3,15 @@ import { Col, Row } from 'antd';
 import musicAPI, { ArtistProps } from '../../../services/musicAPI';
 import ArtistCard from '../../Home/ArtistListView/ArtistCard';
 import SearchArtistCard from './SearchArtistCard';
+import Loading from '../../../component/Loading/Loading';
 
 interface SearchArtistListViewProps {
-    keyword : string
+    keyword: string
 }
 
 const SearchArtistListView = ({
     keyword
-} : SearchArtistListViewProps) => {
+}: SearchArtistListViewProps) => {
     const [isLoading, setLoading] = useState<boolean>(false);
     const [artistList, setArtistList] = useState<Array<ArtistProps>>([]);
     const [page, setPage] = useState<number>(1);
@@ -27,7 +28,7 @@ const SearchArtistListView = ({
         setLoading(true);
         musicAPI.getSearchArtist(getQuery())
             .then(response => {
-                const data : Array<ArtistProps> = response.data.results.artistmatches.artist;
+                const data: Array<ArtistProps> = response.data.results.artistmatches.artist;
                 setArtistList(data);
                 setLoading(false);
             })
@@ -39,14 +40,16 @@ const SearchArtistListView = ({
 
     return (
         <div>
-            <h2 style={{marginTop : '50px'}}>
+            <h2 style={{ marginTop: '50px' }}>
                 Artist Result
             </h2>
-            <div className='custom-carrousel'>
-                {artistList.map((artist, idx) => (
+            {isLoading ?
+                <Loading /> :
+                <div className='custom-carrousel'>
+                    {artistList.map((artist, idx) => (
                         <SearchArtistCard key={idx} data={artist} onClick={() => { }} />
-                ))}
-            </div>
+                    ))}
+                </div>}
         </div>
     );
 }

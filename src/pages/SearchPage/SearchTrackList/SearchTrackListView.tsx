@@ -3,6 +3,7 @@ import { Col, Row } from 'antd';
 import musicAPI, { SearchedTrackProps } from '../../../services/musicAPI';
 import SearchArtistCard from './SearchTrackCard';
 import SearchTrackCard from './SearchTrackCard';
+import Loading from '../../../component/Loading/Loading';
 
 interface SearchTrackListViewProps {
     keyword: string
@@ -37,16 +38,19 @@ const SearchTrackListView = ({
         if (keyword) loadArtist();
     }, [keyword]);
 
+
     return (
         <div>
-            <h2 style={{marginTop : '50px'}}>
+            <h2 style={{ marginTop: '50px' }}>
                 Tracks Result
             </h2>
-            <div className='custom-carrousel'>
-                {trackList.map((track, idx) => (
-                    <SearchTrackCard key={idx} data={track} onClick={() => { }} />
-                ))}
-            </div>
+            {isLoading ?
+                <Loading /> :
+                <div className='custom-carrousel'>
+                    {trackList.map((track, idx) => (
+                        <SearchTrackCard key={idx} data={track} onClick={() => { }} />
+                    ))}
+                </div>}
         </div>
     );
 }

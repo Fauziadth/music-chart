@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Col, Row } from 'antd';
 import { SearchedTrackProps } from '../../../services/musicAPI';
+import CustomImg from '../../../component/CustomImg/CustomImg';
 
 interface SearchArtistCardProps {
     data: SearchedTrackProps
@@ -17,7 +17,7 @@ const SearchTrackCard = ({
             style={{ width: 480 }}
             onClick={() => { onClick() }}
         >
-            <img alt="track image" src={data.image[2]['#text']} />
+            <CustomImg alt="track image" src={data.image[2]['#text']} />
             <div> {data.name} </div>
             <small> {data.artist} </small>
         </div>

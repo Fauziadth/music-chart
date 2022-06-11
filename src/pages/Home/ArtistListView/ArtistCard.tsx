@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Row } from 'antd';
 import { ArtistProps } from '../../../services/musicAPI';
 import { numberWithCommas } from '../../../utils/utlis';
+import CustomImg from '../../../component/CustomImg/CustomImg';
 
 interface ArtistCardProps {
     data: ArtistProps
@@ -17,7 +18,7 @@ const ArtistCard = ({
         <Card onClick={() => { onClick() }}>
             <Row align="middle">
                 <Col sm={24} md={4}>
-                    <img src={data.image[1]['#text']} alt={`${data.name}`} />
+                    <CustomImg src={data.image[1]['#text']} alt={`${data.name}`} />
                 </Col>
                 <Col sm={24} md={20} style={{padding : '0 20px'}}>
                     <h2>{data.name}</h2>
