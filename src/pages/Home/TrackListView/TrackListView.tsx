@@ -1,17 +1,17 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'antd';
-import musicAPI, { ArtistListProps, ArtistProps } from '../../../services/musicAPI';
+import musicAPI, { TrackListProps, TrackProps } from '../../../services/musicAPI';
 import { numberWithCommas } from '../../../utils/utlis';
 
-interface ArtistCardProps {
-    data: ArtistProps
+interface TrackCardProps {
+    data: TrackProps
     onClick: () => void
 }
 
-const ArtistCard = ({
+const TrackCard = ({
     data,
     onClick
-}: ArtistCardProps) => {
+}: TrackCardProps) => {
 
     return (
         <Col xs={24}>
@@ -24,9 +24,9 @@ const ArtistCard = ({
     )
 }
 
-const ArtistListView = () => {
+const TrackListView = () => {
     const [isLoading, setLoading] = useState<boolean>(false);
-    const [artistList, setArtistList] = useState<Array<ArtistProps>>([]);
+    const [trackList, setTrackList] = useState<Array<TrackProps>>([]);
     const [page, setPage] = useState<number>(1);
 
     const getQuery = () => {
@@ -38,10 +38,10 @@ const ArtistListView = () => {
 
     const loadArtist = () => {
         setLoading(true);
-        musicAPI.getTopArtisList(getQuery())
+        musicAPI.getTopTrackList(getQuery())
             .then(response => {
-                const data: ArtistListProps = response.data.artists;
-                setArtistList(data.artist);
+                const data: TrackListProps = response.data.tracks;
+                setTrackList(data.track);
             })
     }
 
@@ -51,11 +51,11 @@ const ArtistListView = () => {
 
     return (
         <Row gutter={[16, 16]} style={{ padding: "20px" }}>
-            {artistList.map((artist, idx) => (
-                <ArtistCard key={idx} data={artist} onClick={() => { }} />
+            {trackList.map((track, idx) => (
+                <TrackCard key={idx} data={track} onClick={() => { }} />
             ))}
         </Row>
     );
 }
 
-export default ArtistListView;
+export default TrackListView;
