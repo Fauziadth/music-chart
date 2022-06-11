@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Tooltip } from 'antd';
+import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
 import { ArtistProps } from '../../../services/musicAPI';
 import { numberWithCommas } from '../../../utils/utlis';
 import CustomImg from '../../../component/CustomImg/CustomImg';
@@ -16,14 +17,24 @@ const ArtistCard = ({
 
     return (
         <Card onClick={() => { onClick() }}>
-            <Row align="middle">
+            <Row align="middle" justify='center'>
                 <Col sm={24} md={4}>
                     <CustomImg src={data.image[1]['#text']} alt={`${data.name}`} />
                 </Col>
                 <Col sm={24} md={20} style={{padding : '0 20px'}}>
                     <a href={data.url} target="_blank" className='underline'><h2>{data.name}</h2></a>
-                    <h3>Playcount: {numberWithCommas(data.playcount)}</h3>
-                    <h3>Listener: {numberWithCommas(data.listeners)}</h3>
+                    <h3 className='mb-0'>
+                        <Tooltip title="Play count">
+                            <PlayCircleOutlined className='mr-2' />
+                        </Tooltip>
+                        {numberWithCommas(data.playcount)}
+                    </h3>
+                    <h3 className='mb-0'>
+                        <Tooltip title="Listeners">
+                            <UserOutlined className='mr-2' />
+                        </Tooltip>
+                        {numberWithCommas(data.listeners)}
+                    </h3>
                 </Col>
             </Row>
         </Card>

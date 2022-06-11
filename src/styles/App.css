@@ -30,8 +30,11 @@ a.shadow {
     border-radius: 8px;
 }
 
-a.underline {
+a.underline, a.underline h2 {
     text-decoration: underline;
+}
+a.underline h2 {
+    display: inline-block;
 }
 
 .flex-center {
