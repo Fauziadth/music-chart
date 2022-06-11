@@ -29,7 +29,7 @@ const ArtistListView = () => {
     }, []);
 
     return (
-        <Row gutter={[16, 16]} style={{ padding: "20px" }}>
+        <Row gutter={[16, 16]}>
             {artistList.map((artist, idx) => (
                 <Col key={idx} xs={24}>
                     <ArtistCard data={artist} onClick={() => { }} />

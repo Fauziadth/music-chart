@@ -15,11 +15,11 @@ const ArtistCard = ({
 
     return (
         <Card onClick={() => { onClick() }}>
-            <Row>
-                <Col xs={24} sm={4}>
-                    <img src={data.image[0]['#text']} alt={`${data.name}`} />
+            <Row align="middle">
+                <Col sm={24} md={4}>
+                    <img src={data.image[1]['#text']} alt={`${data.name}`} />
                 </Col>
-                <Col xs={24} sm={20}>
+                <Col sm={24} md={20} style={{padding : '0 20px'}}>
                     <h2>{data.name}</h2>
                     <h3>Playcount: {numberWithCommas(data.playcount)}</h3>
                     <h3>Listener: {numberWithCommas(data.listeners)}</h3>

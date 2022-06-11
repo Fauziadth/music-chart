@@ -19,7 +19,7 @@ const SearchPage = () => {
             <Input
                 value={keyword}
                 className={initView ? 'big-input' : 'small-input'}
-                placeholder={"Search..."}
+                placeholder={"Search artist or track"}
                 style={{ width: '50%', marginTop: '30px' }}
                 size="large"
                 onChange={(e) => { setKeyword(e.target.value) }}

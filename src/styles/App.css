@@ -1,3 +1,16 @@
+.mx-0 {
+    margin: 0;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+.mr-2 {
+    margin-right: 0.5em;
+}
+.mt-4 {
+    margin-top: 1em;
+}
+
 .custom-carrousel {
     display: flex;
     flex-wrap: nowrap;
@@ -6,7 +19,7 @@
     overflow-x: auto;
 }
 
-.big-input > input,
-.big-input > span {
-    font-size: 48px;
+.big-input>input,
+.big-input>span {
+    font-size: 36px;
 }

@@ -12,7 +12,7 @@ const { Content } = Layout;
 
 const App = () => {
   return (
-    <Layout className="App" style={{minHeight:"100vh"}}>
+    <Layout className="App" style={{ minHeight: "100vh" }}>
       <Header />
 
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>

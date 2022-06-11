@@ -18,9 +18,8 @@ const SearchTrackCard = ({
             onClick={() => { onClick() }}
         >
             <img alt="track image" src={data.image[2]['#text']} />
-            <div>
-                {data.name}
-            </div>
+            <div> {data.name} </div>
+            <small> {data.artist} </small>
         </div>
     )
 }

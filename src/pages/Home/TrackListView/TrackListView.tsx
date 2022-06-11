@@ -20,6 +20,7 @@ const TrackListView = () => {
         musicAPI.getTopTrackList(getQuery())
             .then(response => {
                 const data: TrackListProps = response.data.tracks;
+                console.log("data", data.track);
                 setTrackList(data.track);
             })
     }
@@ -29,7 +30,7 @@ const TrackListView = () => {
     }, []);
 
     return (
-        <Row gutter={[16, 16]} style={{ padding: "20px" }}>
+        <Row gutter={[16, 16]}>
             {trackList.map((track, idx) => (
                 <Col key={idx} xs={24}>
                     <TrackCard data={track} onClick={() => { }} />
