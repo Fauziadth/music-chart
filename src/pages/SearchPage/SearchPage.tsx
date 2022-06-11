@@ -16,9 +16,8 @@ const SearchPage = () => {
         <Fragment>
             <Input
                 value={keyword}
-                className={searchedKey ? 'small-input' : 'big-input' }
+                className={`${searchedKey ? 'small-input' : 'big-input'} mt-4` }
                 placeholder={"Search artist or track"}
-                style={{ width: '50%', marginTop: '30px' }}
                 size="large"
                 onChange={(e) => { setKeyword(e.target.value) }}
                 onKeyDown={(e) => { if (e.key === 'Enter') search(); }}

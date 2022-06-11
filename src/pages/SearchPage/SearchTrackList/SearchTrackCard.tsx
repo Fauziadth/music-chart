@@ -13,14 +13,19 @@ const SearchTrackCard = ({
 }: SearchArtistCardProps) => {
 
     return (
-        <div
+        <a
+            className='shadow'
+            href={data.url}
+            target="_blank"
             style={{ width: 480 }}
             onClick={() => { onClick() }}
         >
             <CustomImg alt="track image" src={data.image[2]['#text']} />
-            <div> {data.name} </div>
-            <small> {data.artist} </small>
-        </div>
+            <div className='p-3'>
+                <div> {data.name} </div>
+                <small> {data.artist} </small>
+            </div>
+        </a>
     )
 }
 

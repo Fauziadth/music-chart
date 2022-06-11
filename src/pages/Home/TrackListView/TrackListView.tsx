@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'antd';
+import { Col, List, Row } from 'antd';
 import musicAPI, { TrackListProps, TrackProps } from '../../../services/musicAPI';
 import TrackCard from './TrackCard';
 import Loading from '../../../component/Loading/Loading';
@@ -21,7 +21,6 @@ const TrackListView = () => {
         musicAPI.getTopTrackList(getQuery())
             .then(response => {
                 const data: TrackListProps = response.data.tracks;
-                console.log("data", data.track);
                 setTrackList(data.track);
                 setLoading(false);
             })
@@ -31,16 +30,15 @@ const TrackListView = () => {
         loadArtist();
     }, []);
 
-    if (isLoading) return (<Loading/>)
+    if (isLoading) return (<Loading />)
 
     return (
-        <Row gutter={[16, 16]}>
-            {trackList.map((track, idx) => (
-                <Col key={idx} xs={24}>
-                    <TrackCard data={track} onClick={() => { }} />
-                </Col>
-            ))}
-        </Row>
+        <List
+            size="large"
+            bordered
+            dataSource={trackList}
+            renderItem={track => <TrackCard data={track} onClick={() => { }} />}
+        />
     );
 }
 

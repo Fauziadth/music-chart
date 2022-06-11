@@ -1,14 +1,42 @@
 .mx-0 {
     margin: 0;
 }
+
 .mb-0 {
     margin-bottom: 0;
 }
+
 .mr-2 {
     margin-right: 0.5em;
 }
+
 .mt-4 {
     margin-top: 1em;
+}
+
+.p-3 {
+    padding: 0.74em
+}
+
+a,
+a:hover {
+    color: #0c0c0c;
+    cursor: pointer;
+}
+
+a.shadow {
+    border: 1px solid #0c0c0c;
+    box-shadow: 0 0 5px #0c0c0c38;
+    border-radius: 8px;
+}
+
+a.underline {
+    text-decoration: underline;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
 }
 
 .custom-carrousel {

@@ -6,11 +6,11 @@ import TrackListView from './TrackListView/TrackListView';
 const Home = () => {
     return (
         <Row gutter={[32, 16]}>
-            <Col xs={24} sm={12}>
+            <Col xs={24}>
                 <h2 className="mt-4">Top Artist</h2>
                 <ArtistListView />
             </Col>
-            <Col xs={24} sm={12}>
+            <Col xs={24}>
                 <h2 className="mt-4">Top Tracks</h2>
                 <TrackListView />
             </Col>

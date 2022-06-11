@@ -3,6 +3,7 @@ import { Card, Col, Row, Tooltip } from 'antd';
 import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
 import { TrackProps } from '../../../services/musicAPI';
 import { numberWithCommas } from '../../../utils/utlis';
+import musicIcon from '../../../img/musical-note.png';
 
 interface TrackCardProps {
     data: TrackProps
@@ -18,13 +19,15 @@ const TrackCard = ({
         <Card onClick={() => { onClick() }}>
             <Row align='middle' justify='space-between'>
                 <Col xs={24} md={16}>
-                    <h2 className='mb-0'>{data.name}</h2>
+                    <a className="underline flex-center" href={data.url} target="_blank">
+                        <img src={musicIcon} style={{ height: 20 }} /><h2 className='mb-0'>{data.name}</h2>
+                    </a>
                     <small>{data.artist.name}</small>
                 </Col>
                 <Col xs={24} md={8}>
                     <h3 className='mb-0'>
                         <Tooltip title="Play count">
-                            <PlayCircleOutlined className='mr-2'/>
+                            <PlayCircleOutlined className='mr-2' />
                         </Tooltip>
                         {numberWithCommas(data.playcount)}
                     </h3>

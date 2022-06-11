@@ -17,9 +17,9 @@ const CustomImg = ({
         setFailed(true);
     }
 
-    if (isFailed) return <Skeleton.Image/>
+    if (isFailed) return <Skeleton.Image style={{width : 174, height : 174}}/>
     return (
-        <img alt={alt} src={src} onError={onError} />
+        <img style={{borderRadius : 'inherit'}} alt={alt} src={src} onError={onError} />
     );
 }
 
