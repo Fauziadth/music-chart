@@ -2,27 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'antd';
 import musicAPI, { TrackListProps, TrackProps } from '../../../services/musicAPI';
 import { numberWithCommas } from '../../../utils/utlis';
-
-interface TrackCardProps {
-    data: TrackProps
-    onClick: () => void
-}
-
-const TrackCard = ({
-    data,
-    onClick
-}: TrackCardProps) => {
-
-    return (
-        <Col xs={24}>
-            <Card onClick={() => { onClick() }}>
-                <h2>{data.name}</h2>
-                <h3>Playcount: {numberWithCommas(data.playcount)}</h3>
-                <h3>Listener: {numberWithCommas(data.listeners)}</h3>
-            </Card>
-        </Col>
-    )
-}
+import TrackCard from './TrackCard';
 
 const TrackListView = () => {
     const [isLoading, setLoading] = useState<boolean>(false);
@@ -31,8 +11,8 @@ const TrackListView = () => {
 
     const getQuery = () => {
         return {
-            page : page,
-            limit : 10
+            page: page,
+            limit: 10
         }
     }
 
@@ -52,7 +32,9 @@ const TrackListView = () => {
     return (
         <Row gutter={[16, 16]} style={{ padding: "20px" }}>
             {trackList.map((track, idx) => (
-                <TrackCard key={idx} data={track} onClick={() => { }} />
+                <Col key={idx} xs={24}>
+                    <TrackCard data={track} onClick={() => { }} />
+                </Col>
             ))}
         </Row>
     );
