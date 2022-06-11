@@ -64,7 +64,6 @@ export interface SearchedTrackProps {
 }
 
 const musicAPI = {
-
     getTopArtisList: (query: Object) => {
         const api = "chart.gettopartists"
 

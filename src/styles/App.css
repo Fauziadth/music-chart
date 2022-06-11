@@ -5,3 +5,8 @@
     max-width: 100%;
     overflow-x: auto;
 }
+
+.big-input > input,
+.big-input > span {
+    font-size: 48px;
+}

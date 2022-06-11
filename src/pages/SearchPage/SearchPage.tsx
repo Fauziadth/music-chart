@@ -7,23 +7,25 @@ import SearchTrackListView from './SearchTrackList/SearchTrackListView';
 const SearchPage = () => {
     const [keyword, setKeyword] = useState<string>("")
     const [searchedKey, setSearchedKey] = useState<string>("")
+    const [initView, setInitView] = useState<boolean>(true)
+
+    const search = () => {
+        setSearchedKey(keyword);
+        setInitView(false)
+    }
 
     return (
         <Fragment>
             <Input
                 value={keyword}
-                bordered={true}
+                className={initView ? 'big-input' : 'small-input'}
                 placeholder={"Search..."}
+                style={{ width: '50%', marginTop: '30px' }}
                 size="large"
                 onChange={(e) => { setKeyword(e.target.value) }}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') setSearchedKey(keyword);
-                }}
-                suffix={
-                    <SearchOutlined
-                        onClick={() => { setSearchedKey(keyword) }}
-                    />
-                } />
+                onKeyDown={(e) => { if (e.key === 'Enter') search(); }}
+                suffix={<SearchOutlined onClick={() => { search() }} />}
+            />
 
             {searchedKey && <SearchArtistListView
                 keyword={searchedKey}
