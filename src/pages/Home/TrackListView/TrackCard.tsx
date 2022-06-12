@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card, Col, Row, Tooltip } from 'antd';
 import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
-import { TrackProps } from '../../../services/musicAPI';
+
 import { numberWithCommas } from '../../../utils/utlis';
+import { TrackProps } from '../../../services/models';
 import musicIcon from '../../../img/musical-note.png';
 
 interface TrackCardProps {
-    data: TrackProps
+    data: TrackProps,
     onClick: () => void
 }
 
@@ -20,7 +21,7 @@ const TrackCard = ({
             <Row align='middle' justify='space-between'>
                 <Col xs={24} md={16}>
                     <a className="underline flex-center" href={data.url} target="_blank">
-                        <img src={musicIcon} style={{ height: 20 }} /><h2 className='mb-0'>{data.name}</h2>
+                        <img src={musicIcon} alt="placeholder img" style={{ height: 20 }} /><h2 className='mb-0'>{data.name}</h2>
                     </a>
                     <small>{data.artist.name}</small>
                 </Col>

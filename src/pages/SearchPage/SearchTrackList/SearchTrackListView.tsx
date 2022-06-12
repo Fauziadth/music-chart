@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'antd';
-import musicAPI, { SearchedTrackProps } from '../../../services/musicAPI';
-import SearchArtistCard from './SearchTrackCard';
+
+import musicAPI from '../../../services/musicAPI';
 import SearchTrackCard from './SearchTrackCard';
 import Loading from '../../../component/Loading/Loading';
+import { SearchedTrackProps } from '../../../services/models';
 
 interface SearchTrackListViewProps {
     keyword: string

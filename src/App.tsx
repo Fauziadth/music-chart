@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'antd';
 
 import 'antd/dist/antd.min.css';
-import './styles/App.css';
+import './styles/custom.css';
 import Home from './pages/Home/Home';
 import Header from './component/Header/HeaderNav';
-import { Layout } from 'antd';
 import SearchPage from './pages/SearchPage/SearchPage';
 
 const { Content } = Layout;

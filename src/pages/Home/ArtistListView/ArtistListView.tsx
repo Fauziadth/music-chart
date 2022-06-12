@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, List, Row } from 'antd';
-import musicAPI, { ArtistListProps, ArtistProps } from '../../../services/musicAPI';
+import { List } from 'antd';
+import musicAPI from '../../../services/musicAPI';
 import ArtistCard from './ArtistCard';
 import Loading from '../../../component/Loading/Loading';
+import { ArtistListProps, ArtistProps } from '../../../services/models';
 
 const ArtistListView = () => {
     const [isLoading, setLoading] = useState<boolean>(false);
@@ -21,7 +22,6 @@ const ArtistListView = () => {
         musicAPI.getTopArtisList(getQuery())
             .then(response => {
                 const data: ArtistListProps = response.data.artists;
-                console.log("data.artist", data.artist);
                 setArtistList(data.artist);
                 setLoading(false);
             })

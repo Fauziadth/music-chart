@@ -1,6 +1,7 @@
 import React from 'react';
-import { SearchedTrackProps } from '../../../services/musicAPI';
+
 import CustomImg from '../../../component/CustomImg/CustomImg';
+import { SearchedTrackProps } from '../../../services/models';
 
 interface SearchArtistCardProps {
     data: SearchedTrackProps

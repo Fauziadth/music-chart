@@ -1,9 +1,8 @@
 import React from 'react';
-import { Card, Col, Row } from 'antd';
-import { ArtistProps } from '../../../services/musicAPI';
-import CustomImg from '../../../component/CustomImg/CustomImg';
+import { Card } from 'antd';
 
-const { Meta } = Card;
+import CustomImg from '../../../component/CustomImg/CustomImg';
+import { ArtistProps } from '../../../services/models';
 
 interface SearchArtistCardProps {
     data: ArtistProps

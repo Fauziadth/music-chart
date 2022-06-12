@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'antd';
-import musicAPI, { ArtistProps } from '../../../services/musicAPI';
-import ArtistCard from '../../Home/ArtistListView/ArtistCard';
+
+import musicAPI from '../../../services/musicAPI';
 import SearchArtistCard from './SearchArtistCard';
 import Loading from '../../../component/Loading/Loading';
+import { ArtistProps } from '../../../services/models';
 
 interface SearchArtistListViewProps {
     keyword: string

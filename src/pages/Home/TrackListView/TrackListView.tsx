@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, List, Row } from 'antd';
-import musicAPI, { TrackListProps, TrackProps } from '../../../services/musicAPI';
+import { List } from 'antd';
+import musicAPI from '../../../services/musicAPI';
 import TrackCard from './TrackCard';
 import Loading from '../../../component/Loading/Loading';
+import { TrackListProps, TrackProps } from '../../../services/models';
 
 const TrackListView = () => {
     const [isLoading, setLoading] = useState<boolean>(false);

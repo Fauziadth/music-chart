@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Col, Row, Tooltip } from 'antd';
 import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
-import { ArtistProps } from '../../../services/musicAPI';
-import { numberWithCommas } from '../../../utils/utlis';
+
 import CustomImg from '../../../component/CustomImg/CustomImg';
+import { numberWithCommas } from '../../../utils/utlis';
+import { ArtistProps } from '../../../services/models';
 
 interface ArtistCardProps {
     data: ArtistProps

@@ -25,7 +25,7 @@ a:hover {
 }
 
 a.shadow {
-    border: 1px solid #0c0c0c;
+    border: 1px solid #0c0c0c50;
     box-shadow: 0 0 5px #0c0c0c38;
     border-radius: 8px;
 }
