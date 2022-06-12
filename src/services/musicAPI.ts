@@ -8,6 +8,11 @@ const musicAPI = {
 
         return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
     },
+    getArtistDetail: (query: Object) => {
+        const api = "artist.getInfo"
+
+        return axios.get(`${LASTFM_BASE}&method=${api}${convertQuery(query)}`)
+    },
     getTopTrackList: (query: Object) => {
         const api = "chart.gettoptracks"
 

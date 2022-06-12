@@ -38,7 +38,7 @@ const ArtistListView = () => {
             size="large"
             bordered
             dataSource={artistList}
-            renderItem={artist => <ArtistCard data={artist} onClick={() => { }} />}
+            renderItem={artist => <ArtistCard data={artist} />}
         />
     );
 }

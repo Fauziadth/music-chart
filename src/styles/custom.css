@@ -20,12 +20,18 @@ h6 {
     margin-right: 0.5em;
 }
 
+.mt-2 {
+    margin-top: 0.5em;
+}
 .mt-4 {
     margin-top: 1em;
 }
 
+.pt-4 {
+    padding-top: 1em;
+}
 .p-3 {
-    padding: 0.74em
+    padding: 0.74em;
 }
 
 a,

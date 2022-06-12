@@ -26,6 +26,32 @@ export interface ArtistListProps {
     "@attr": ListProps
 }
 
+export interface DetailedArtistProps {
+    name: string,
+    mbid: string,
+    url: string,
+    image: Array<ImageProps>,
+    streamable: string,
+    ontour: string,
+    stats: {
+        listeners: string,
+        playcount: string
+    },
+    tags : {
+        tag : Array<TagProps>
+    },
+    bio : {
+        published : string,
+        summary : string,
+        content : string,
+    }
+}
+
+interface TagProps {
+    name : string,
+    url : string,
+}
+
 export interface TrackProps {
     name: string,
     duration: string,
