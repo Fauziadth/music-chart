@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'antd';
 
 import CustomImg from '../../../component/CustomImg/CustomImg';
 import { ArtistProps } from '../../../services/models';
