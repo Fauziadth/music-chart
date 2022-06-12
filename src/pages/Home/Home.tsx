@@ -7,11 +7,11 @@ const Home = () => {
     return (
         <Row gutter={[32, 16]}>
             <Col xs={24}>
-                <h2 className="mt-4">Top Artist</h2>
+                <h1 className="mt-4">Top Artist</h1>
                 <ArtistListView />
             </Col>
             <Col xs={24}>
-                <h2 className="mt-4">Top Tracks</h2>
+                <h1 className="mt-4">Top Tracks</h1>
                 <TrackListView />
             </Col>
         </Row>

@@ -51,7 +51,7 @@ const ArtistCard = ({
                         {numberWithCommas(data.listeners)}
                     </h3>
                 </Col>
-                <Col sm={2} md={2} style={{ padding: '0 20px', fontSize: '30px', cursor: 'pointer' }}
+                <Col sm={2} md={2} style={{ padding: '0 20px', fontSize: '30px', cursor: 'pointer', color:'#299ED3' }}
                     onClick={() => {
                         if (isExpand) setExpand(false)
                         else loadArtist()
@@ -67,7 +67,7 @@ const ArtistCard = ({
                         <Loading />
                         :
                         <div className='pt-4'>
-                            {details.tags.tag.map((t, idx) => <a key={idx} href={t.url} target="_blank"><Tag color={'green'}>{t.name}</Tag></a>)}
+                            {details.tags.tag.map((t, idx) => <a key={idx} href={t.url} target="_blank"><Tag color={'blue'}>{t.name}</Tag></a>)}
                             <div className='mt-2' dangerouslySetInnerHTML={{ __html : details.bio.summary}}/>
                         </div>
                     }

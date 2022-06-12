@@ -13,6 +13,7 @@
 .mt-2 {
     margin-top: 0.5em;
 }
+
 .mt-4 {
     margin-top: 1em;
 }
@@ -20,8 +21,14 @@
 .pt-4 {
     padding-top: 1em;
 }
+
 .p-3 {
     padding: 0.74em;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 36px;
 }
 
 a,
@@ -31,8 +38,8 @@ a:hover {
 }
 
 a.shadow {
-    border: 1px solid #0c0c0c50;
-    box-shadow: 0 0 5px #0c0c0c38;
+    /* border: 1px solid #0c0c0c50; */
+    /* box-shadow: 0 0 5px #0c0c0c38; */
     border-radius: 8px;
 }
 
@@ -41,6 +48,7 @@ a.underline h2 {
     width: fit-content;
     text-decoration: underline;
 }
+
 a.underline h2 {
     display: inline-block;
 }
@@ -61,4 +69,45 @@ a.underline h2 {
 .big-input>input,
 .big-input>span {
     font-size: 36px;
+}
+
+/* antd colouring */
+
+.ant-layout,
+.ant-layout-header,
+.ant-menu.ant-menu-dark {
+    background-color: #f0f2f5;
+}
+
+.ant-menu-dark .ant-menu-item {
+    color: #25344E;
+}
+
+.ant-menu-dark.ant-menu-horizontal>.ant-menu-item {
+    font-weight: 700;
+}
+
+.ant-menu-dark.ant-menu-horizontal>.ant-menu-item:hover,
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+    color: #299ED3;
+    background-color: #f0f2f5;
+}
+
+.ant-input-affix-wrapper.ant-input-affix-wrapper-lg,
+.ant-input.ant-input-lg {
+    color: #299ED3;
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+    /* border-color: #4E9F3D; */
+}
+
+.ant-card {
+    color: #25344E;
+    background-color: #FFFFFF   ;
+}
+
+.ant-card-bordered,
+.ant-list-bordered {
+    /* border-color: #4E9F3D; */
 }
