@@ -17,8 +17,8 @@ const App = () => {
 
       <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
         <Routes>
-          <Route path={`/`} element={<Home />} />
           <Route path={`/search`} element={<SearchPage />} />
+          <Route path={`/`} element={<Home />} />
         </Routes>
       </Content>
     </Layout>

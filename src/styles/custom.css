@@ -42,6 +42,7 @@ a.shadow {
 
 a.underline,
 a.underline h2 {
+    width: fit-content;
     text-decoration: underline;
 }
 
