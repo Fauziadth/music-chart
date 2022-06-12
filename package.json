@@ -1,6 +1,5 @@
 {
   "name": "music-chart",
-  "homepage": "http://fauziadth.github.io/music-chart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
