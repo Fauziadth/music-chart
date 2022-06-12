@@ -1,3 +1,13 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #eff7d9;
+}
+
 .mx-0 {
     margin: 0;
 }
@@ -20,7 +30,7 @@
 
 a,
 a:hover {
-    color: #0c0c0c;
+    color: #eff7d9;
     cursor: pointer;
 }
 
@@ -30,9 +40,11 @@ a.shadow {
     border-radius: 8px;
 }
 
-a.underline, a.underline h2 {
+a.underline,
+a.underline h2 {
     text-decoration: underline;
 }
+
 a.underline h2 {
     display: inline-block;
 }
@@ -53,4 +65,42 @@ a.underline h2 {
 .big-input>input,
 .big-input>span {
     font-size: 36px;
+}
+
+/* antd colouring */
+
+.ant-layout,
+.ant-layout-header,
+.ant-menu.ant-menu-dark {
+    background-color: #191A19;
+}
+
+.ant-menu-dark.ant-menu-horizontal>.ant-menu-item {
+    font-weight: 700;
+}
+
+.ant-menu-dark.ant-menu-horizontal>.ant-menu-item:hover,
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+    color: #D8E9A8;
+    background-color: #191A19;
+}
+
+.ant-input-affix-wrapper.ant-input-affix-wrapper-lg,
+.ant-input.ant-input-lg {
+    background-color: #191A19;
+    color: #D8E9A8;
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+    border-color: #4E9F3D;
+}
+
+.ant-card {
+    color: #eff7d9;
+    background-color: #0c2211;
+}
+
+.ant-card-bordered,
+.ant-list-bordered {
+    border-color: #4E9F3D;
 }
